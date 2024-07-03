@@ -2,9 +2,10 @@
 #import "typesetting.typ": boxy
 
 #let evaluate-string(s) = {
-    let answer = eval(s, mode: "code")
-    let computed = str-sub(s, " +\* +", " #times ")
-    let mc = mathup(computed + " = " + str-call("bold", answer))
+    let computed = str-sub(s, "times", "*")
+    let answer = eval(computed, mode: "code")
+    // let computed = str-sub(s, " +\* +", " #times ")
+    let mc = mathup(s + " = " + str-call("bold", answer))
     mc
 }
 

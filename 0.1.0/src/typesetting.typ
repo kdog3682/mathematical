@@ -49,3 +49,6 @@
     // wde("a + b"),
     // boxy("x^2 times 5"),
 // )
+
+
+// #boxy([#boxy(123) is cool])
