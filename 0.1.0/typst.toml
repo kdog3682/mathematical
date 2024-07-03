@@ -1,0 +1,11 @@
+[package]
+name = "mathematical"
+version = "0.1.0"
+compiler = "0.11.0"
+repository = "https://github.com/kdog3682/mathematical"
+entrypoint = "src/index.typ"
+description = "math typsetting for typst"
+authors = [
+  "Kevin Lee <https://github.com/kdog3682>",
+]
+license = "MIT"
