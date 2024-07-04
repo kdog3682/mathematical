@@ -19,19 +19,6 @@
     [#mc.  #h(5pt) #p]
 }
 
-#let boxy(c, ..opts) = {
-    let attrs = (
-        stroke: 0.25pt + black,
-        inset: (
-            x: 5pt,
-            y: 5pt,
-        ),
-        radius: 3pt,
-        baseline: 25%,
-    )
-    box(..attrs, mathup(c), ..opts)
-}
-
 #let answer-x(x, target: "x") = {
     let mc = mathup(x)
     [The answer is #h(3pt) #boxy([*#target #equals #mc*])]

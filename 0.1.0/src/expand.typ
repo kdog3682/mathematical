@@ -18,11 +18,17 @@
     test(s, "!$")
 }
 
-#let expand-string(s) = {
+#let expand-string(s, evaluate: false) = {
     if is-factorial(s) {
         let m = int(match(s, "\d+"))
         let numbers = range(m, 0, step: -1)
-        math.equation(numbers.map(resolve-content).join(marks.math.times))
+        let a = numbers.map(resolve-content).join(marks.math.times)
+        if evaluate == true {
+            let b = math.bold(str(numbers.product()))
+            return math.equation((a, b).join(marks.math.equals))
+        } else {
+            return math.equation(a)
+        }
     }
     else if is-multiplication(s) {
     }
@@ -33,9 +39,9 @@
     }
 }
 
-#let expand(s) = {
+#let expand(s, evaluate: false) = {
     if is-string(s) {
-        expand-string(s)
+        expand-string(s, evaluate: evaluate)
     } else {
         expand-content(s)
     }

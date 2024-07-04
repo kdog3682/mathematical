@@ -1,7 +1,7 @@
 #import "@local/typkit:0.1.0": *
 
 
-#let factorial(n, cancels: none, limit: 10, left: 3, right: 3, delimiter: "times", connector: "dots", highlight-remaining: false, highlight-color: "blue") = {
+#let factorial(n, cancels: none, limit: 10, left: 3, right: 3, delimiter: "times", connector: "dots", highlight-remaining: false, highlight-color: "blue", early-stop: false) = {
 
     let delimiters = (
         "times": marks.math.times,
@@ -10,7 +10,7 @@
     let delimiter = delimiters.at(delimiter)
 
     let connectors = (
-        "dots": marks.math.dots,
+        "dots": marks.math.dots + marks.math.dots + marks.math.dots
     )
     let connector = connectors.at(connector)
     let singleton = n > limit
@@ -41,3 +41,4 @@
         return math.equation(numbers.map(callback).join(delimiter))
     }
 }
+

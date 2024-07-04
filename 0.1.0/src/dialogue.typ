@@ -29,6 +29,7 @@
     paper: "us-letter", margin: margin
   )
 
+  let row-gutter = resolve-pt(metadata.at("spacing", default: 15pt))
   simple-meta-layout(metadata)
-  dialogue-layout(dialogue)
+  dialogue-layout(dialogue, row-gutter: row-gutter)
 }
