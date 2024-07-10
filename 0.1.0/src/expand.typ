@@ -1,24 +1,7 @@
-
 #import "@local/typkit:0.1.0": *
 
 
-#let is-exponent-content(c) = {
-    test(s, "\^$")
-}
-
-#let is-factorial(s) = {
-    test(s, "!$")
-}
-
-#let is-fraction(s) = {
-    test(s, "!$")
-}
-
-#let is-multiplication(s) = {
-    test(s, "!$")
-}
-
-#let expand-string(s, evaluate: false) = {
+#let expand-string(s, evaluate: false, show-original: false, fill: none) = {
     if is-factorial(s) {
         let m = int(match(s, "\d+"))
         let numbers = range(m, 0, step: -1)
@@ -31,6 +14,29 @@
         }
     }
     else if is-multiplication(s) {
+        let (a, b) = get-integers(s)
+        let ans = a * b
+        let store = ()
+        let smaller = text.with(size: sizes.small)
+        let items = map(b, (x) => $#colored(a, fill)$).intersperse(sym.plus).map(smaller)
+        let attrs = (
+            stroke: none,
+            align: horizon + center,
+            columns: b,
+            inset: 2pt,
+        )
+        let content = table(..items, ..attrs)
+        let repeated = boxy(content, stroke: strokes.soft)
+
+        store.push(repeated)
+        store.push(marks.math.equals)
+        store.push(boxy($#ans$))
+
+        if show-original == true {
+            store.insert(0, marks.math.arrow)
+            store.insert(0, mathup(s))
+        }
+        return math.equation(store.join())
     }
 }
 #let expand-content(c) = {
@@ -39,14 +45,18 @@
     }
 }
 
-#let expand(s, evaluate: false) = {
+#let expand(s, ..sink) = {
     if is-string(s) {
-        expand-string(s, evaluate: evaluate)
+        expand-string(s, ..sink)
     } else {
-        expand-content(s)
+        expand-content(s, ..sink)
     }
+}
+#let expansion(..sink) = {
+    return expand(..sink)
 }
 
 
-#expand("3!")
+
+// #expand("4 times 8")
 // #panic(expand("3!"))

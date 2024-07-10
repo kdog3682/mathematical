@@ -1,16 +1,6 @@
 #import "@local/typkit:0.1.0": *
 
-#let expanded-factorial-multiplication(..sink) = {
-    let rows = sink.pos()
-    let start = rows.at(0).flatten().at(0)
-    let top-row = range(start, 0, step: -1)
-    context {
-        
-    }
-}
-
-
-
+// currently a hack
 #let expanded-factorial-multiplication(..sink) = {
     let arr = rotate(sym.arrow, 90deg)
     let rows = sink.pos()
