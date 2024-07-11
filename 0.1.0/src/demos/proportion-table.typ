@@ -27,6 +27,8 @@
     x-table(..items, dir: "H")
 }
 
-// #proportion-table("1/8", 9)
-// #proportion-table("1/8", "1/5")
-// #proportion-table(6, "1/5")
+// #svg-test(
+    // proportion-table("1/8", 9),
+    // proportion-table("1/8", "1/5"),
+    // proportion-table(6, "1/5"),
+// )
