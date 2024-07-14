@@ -53,3 +53,5 @@
 
   return (sum-x / n, sum-y / n)
 }
+
+#let get-adjacent-pairs = get-adjacently-paired-segments

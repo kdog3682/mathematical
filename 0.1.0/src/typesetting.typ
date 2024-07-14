@@ -39,3 +39,12 @@
 
 
 // #boxy([#boxy(123) is cool])
+
+
+#let bubbles(a, b) = {
+    let s = [
+        Choice #upper(a): #b
+    ]
+    boxy(s, inset: 10pt)
+}
+

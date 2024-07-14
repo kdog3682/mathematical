@@ -18,6 +18,8 @@
   )
 }
 #let dialogue(dialogue, metadata) = {
+  // can pass in sys.inputs (for version 0.11.0)
+  let inputs = sys.inputs
   let margin = (top: 1in, left: 1in, right: 1in, bottom: 0.85in)
   set page(footer: {
     counter(page).display(number => {
@@ -26,7 +28,7 @@
       centered(mark)
     })
   },
-    paper: "us-letter", margin: margin
+    paper: "us-letter", margin: (top: 1in, left: 1in, right: 1in, bottom: 0.85in)
   )
 
   let row-gutter = resolve-pt(metadata.at("spacing", default: 15pt))

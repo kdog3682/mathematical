@@ -1,33 +1,12 @@
+// the file works ... but 
+// there are overlaps and these overlaps need to be removed
+
 #import "@local/typkit:0.1.0": *
 #import "@preview/cetz:0.2.2"
 #import cetz.draw: *
 
 
-// there are overlaps and these overlaps need to be removed
 
-#let compute-style(x) = {
-    if x == none {
-        return (:)
-    }
-    let store = (:)
-    for (k, v) in x {
-        let value = if k == "stroke" {
-            resolve-stroke(v)
-        }
-        else if k == "foobar" {
-            
-        }
-
-        else if k == "foobar" {
-        }
-        else {
-            
-        }
-            
-        store.insert(k, value)
-    }
-    return store
-}
 
 // length: 1, width: 1, height: 1,
 #let get-prism-segments(pos, dimensions: (1, 1, 1), styles: (:)) = {
@@ -86,6 +65,3 @@
         }
     })
 }
-
-
-

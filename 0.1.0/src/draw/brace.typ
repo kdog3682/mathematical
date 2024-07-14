@@ -28,7 +28,7 @@
   let brace-attrs = colored(resolve-sink-attrs(sink, base), fill, key: "stroke")
   let c = resolve-sink-content(sink)
 
-  cetz.decorations.brace(m1, m2, flip: true, name: "brace", ..brace-attrs)
+  cetz.decorations.brace(m1, m2, flip: flip, name: "brace", ..brace-attrs)
 
   if c != none {
     if rotate-content == true {

@@ -37,7 +37,9 @@
 // ------------------------------------------------------------
 
 // #import "demos/index.typ" as demos
+// #cannot import demos
 // cyclic backtrace happens when demos/index.typ is imported
 // the reason is because it imports ratio.typ which imports mathematical
 // and hey, it just so happens this file is mathematical.
 // thus, the cyclic backtrace
+#import "dialogues/index.typ" as dialogues
