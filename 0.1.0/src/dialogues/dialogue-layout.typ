@@ -1,19 +1,5 @@
-#let map-even-odd(items, ..sink) = {
-  let args = sink.pos()
-  let (even, odd) = if len(args) == 1 {
-    (args.first(), none)
-  } else {
-    args
-  }
-  let callback((i, item)) = {
-      if calc.even(i) == true && even != none {
-          even(item)
-      } else if odd != none {
-          odd(item)
-      }
-  }
-  return items.enumerate().map(callback)
-}
+#import "@local/typkit:0.1.0": *
+
 #let dialogue-layout(items, body-width: auto, row-gutter: 15pt, spacing: 0.8em) = {
   set block(breakable: false)
   show par: set block(spacing: spacing )

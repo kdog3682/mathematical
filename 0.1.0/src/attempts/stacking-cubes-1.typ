@@ -5,6 +5,7 @@
 // doesnt look very good
 
 #import "@local/typkit:0.1.0": *
+#import "@local/mathematical:0.1.0": *
 #import "@preview/cetz:0.2.2"
 #import "../utils.typ": get-adjacent-pairs
 #import cetz.draw: *
@@ -91,3 +92,10 @@
   )
 }
 // #example-multiple-cube()
+// cubes are drawn
+
+#cetz.canvas({
+    draw.shapes.grid()
+    prism((-1, 1, -1))
+    prism((-1, 2, -1))
+})
