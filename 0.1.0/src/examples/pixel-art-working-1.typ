@@ -154,3 +154,4 @@ plot.plot(size: (2,2), x-tick-step: none, y-tick-step: none, {
   set page(margin: (rest: 0pt))
   b
 }
+

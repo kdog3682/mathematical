@@ -43,3 +43,5 @@
 // and hey, it just so happens this file is mathematical.
 // thus, the cyclic backtrace
 #import "dialogues/index.typ" as dialogues
+
+#import "pixelart/index.typ" as pixelart 

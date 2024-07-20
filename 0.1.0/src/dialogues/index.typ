@@ -6,6 +6,8 @@
 // /home/kdog3682/projects/typst/mathematical/0.1.0/src/academic/multiple-choice-question.typ
 // /home/kdog3682/projects/typst/mathematical/0.1.0/src/academic/index.typ
 
+// access the homework type
+
 #let run(items, meta) = {
     let meta-layout = layouts.at(meta.kind)
     set page(..pages.dialogue)
