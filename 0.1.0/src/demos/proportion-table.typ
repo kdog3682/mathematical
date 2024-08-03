@@ -1,6 +1,6 @@
 #import "@local/typkit:0.1.0": *
 
-#let proportion-table(a, b, count: auto) = {
+#let proportion-table(a, b, count: auto, headers: none) = {
     let get(x, n) = {
         if is-number(x) {
             return $#{x * n}$
@@ -24,7 +24,13 @@
         assert(is-number(count), message: "count is required")
     }
     let items = range(1, count + 1).map(callback)
-    x-table(..items, dir: "H")
+    if headers == none {
+        headers = ()
+    } else {
+        // HELPME: how to do table.headers?
+        // headers = headers.map((x) => table.header(HELPME))
+    }
+    x-table(..headers, ..items, dir: "H")
 }
 
 // #svg-test(

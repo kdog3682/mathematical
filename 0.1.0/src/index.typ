@@ -1,3 +1,8 @@
+// TODO
+// #import "dialogues/index.typ" as dialogues
+// #import "pixelart/index.typ" as pixelart
+
+
 #import "typesetting.typ": *
 #import "utils.typ": *
 #import "dialogue.typ": dialogue
@@ -42,6 +47,3 @@
 // the reason is because it imports ratio.typ which imports mathematical
 // and hey, it just so happens this file is mathematical.
 // thus, the cyclic backtrace
-#import "dialogues/index.typ" as dialogues
-
-#import "pixelart/index.typ" as pixelart 
