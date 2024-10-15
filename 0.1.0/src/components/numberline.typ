@@ -137,8 +137,8 @@
 }
 
 // it works 
-// #cetz.canvas({
-    // draw.shapes.grid()
-    // draw.shapes.point((0, 0))
-    // numberline((3, 3), data, name: "abc")
-// })
+#cetz.canvas({
+    draw.shapes.grid()
+    draw.shapes.point((0, 0))
+    numberline((3, 3), data, name: "abc")
+})
