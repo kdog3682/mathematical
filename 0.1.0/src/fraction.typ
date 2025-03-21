@@ -1,5 +1,4 @@
-#import "@local/typkit:0.1.0": *
-
+#import "@local/typkit:0.1.0": mathup
 #let fraction(a, b, align: false) = {
     let a = mathup(a)
     let b = mathup(b)
